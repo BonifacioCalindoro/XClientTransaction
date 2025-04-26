@@ -20,6 +20,12 @@ Twitter X-Client-Transaction-Id generator written in python.
 python quickstart.py
 ```
 
+OR (async)
+
+```python
+python quickstart_async.py
+```
+
 OR
 
 ```python
@@ -34,6 +40,23 @@ print(ct.generate_transaction_id(method=method, path=path))
 print(ct.generate_transaction_id(method="GET", path="/i/api/1.1/hashflags.json"))
 
 ```
+
+OR (async)
+
+```python
+from x_client_transaction import AsyncClientTransaction
+
+response = None # get twitter home page response (check quickstart_async.py)
+method = "POST"
+path = "/1.1/jot/client_event.json"
+
+ct = AsyncClientTransaction()
+await ct.get_transaction_id(response)
+print(ct.generate_transaction_id(method=method, path=path))
+print(ct.generate_transaction_id(method="GET", path="/i/api/1.1/hashflags.json"))
+
+```
+
 
 ## Authors
 

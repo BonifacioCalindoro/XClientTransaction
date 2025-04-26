@@ -1,1 +1,1 @@
-from .transaction import ClientTransaction
+from .transaction import ClientTransaction, AsyncClientTransaction
